@@ -1,0 +1,91 @@
+*, *::before, *::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+.title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align:center;
+    font-size:1.5em;
+    margin-top:1em;
+}
+.dead{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: none;
+    color:#990000;
+    text-align:center;
+    margin-top:4em;
+}
+.window{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+
+.container::after{
+    display: block;
+    position: absolute;
+    bottom:31px;
+    content: '';
+    width:100vw;
+    height:2px;
+    background-color: black;
+}
+.character{
+    position:absolute;
+    bottom:31px;
+    left:50%;
+    width:30px;
+    height:90px;
+}
+
+.jump{
+    position:absolute;
+    bottom:31px;
+    left:50%;
+    width:30px;
+    height:160px;
+    animation: action 2s ease-in-out;
+}
+
+@keyframes action{
+    0% {bottom: 31px}
+    25% {bottom: 140px}
+    50% {bottom: 160px}
+    75% {bottom: 140px}
+    100% {bottom: 31px}
+}
+
+.block{
+    position:absolute; 
+    bottom:30px;
+    right:0;
+    width: 30px;
+    height:30px;
+    background-color: transparent;
+    animation: run 3.5s infinite linear;
+}
+
+.cactus{
+    position:absolute;
+    bottom:31px;
+    right:45px;
+    width: 40px;
+    height:60px;
+    animation: backgroundmove 10s infinite linear;
+}
+.bug{
+    position:absolute;
+    bottom:-40px;
+    display: inline-block;
+    height:70px;
+    width:70px;
+}
+@keyframes run{
+    0% {right:0px}
+    100% {right:95%}
+}
+@keyframes backgroundmove{
+    0% {right:45px}
+    100% {right:95%}
+}
